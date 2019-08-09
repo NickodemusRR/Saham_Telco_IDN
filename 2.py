@@ -1,5 +1,9 @@
 import pandas as pd 
 import matplotlib.pyplot as plt 
+from pandas.plotting import register_matplotlib_converters
+import matplotlib.dates as mdates
+
+register_matplotlib_converters()
 
 excl = pd.read_csv('EXCL.JK.csv', index_col=['Date'], parse_dates=['Date'])
 
@@ -29,6 +33,7 @@ tlkm = tlkm.set_index('Date').reindex(r).fillna(method='bfill', axis=0).rename_a
 # print(excl)
 
 plt.style.use('seaborn-darkgrid')
+plt.figure(figsize=(10,6))
 plt.plot(excl.loc['2019-04'].index, excl.loc['2019-04']['Close'])
 plt.plot(fren.loc['2019-04'].index, fren.loc['2019-04']['Close'])
 plt.plot(isat.loc['2019-04'].index, isat.loc['2019-04']['Close'])
@@ -41,6 +46,6 @@ plt.xlabel('Tanggal')
 plt.ylabel('Rupiah (IDR)')
 
 legends = ['PT XL Axiata Tbk', 'PT Smartfren Telecom Tbk', 'PT Indosat Tbk', 'PT Telekomunikasi Indonesia Tbk']
-plt.legend(legends, loc=9, mode='expand', ncol=4)
+plt.legend(legends, bbox_to_anchor=(0., 1.0, 1., .102), loc=9, ncol=4, mode="expand", borderaxespad=0.)
 
 plt.show()
