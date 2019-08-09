@@ -5,7 +5,7 @@ Repositori ini merupakan jawaban untuk soal [ujian analytics visualtization JCDS
 Berupa dua program python yang menghasilkan 
 
 1. [1.py](1.py) : grafik perbandingan harga penutupan empat saham telco dalam tiga bulan terakhir.
-![gambar1](gambar1.png)
+![gambar1](./pictures/gambar1.png)
 
 2. [2.py](2.py) : grafik perbandingan harga penutupan empat saham telco selama bulan April 2019
-![gambar2](gambar2.png)
+![gambar2](./pictures/gambar2.png)
